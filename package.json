@@ -1,0 +1,19 @@
+{
+  "name": "holmes",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "commandkit": "^0.1.10",
+    "discord.js": "^14.16.3",
+    "zod": "^3.23.8"
+  },
+  "scripts": {
+    "dev": "bun --watch src/index.ts"
+  }
+}
