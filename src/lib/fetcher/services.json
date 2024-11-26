@@ -13,5 +13,25 @@
     "name": "Instagram",
     "url": "https://instagram.com/{username}",
     "existsWhen": 200
+  },
+  {
+    "name": "LinkedIn",
+    "url": "https://www.linkedin.com/in/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "Facebook",
+    "url": "https://www.facebook.com/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "YouTube",
+    "url": "https://www.youtube.com/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "Reddit",
+    "url": "https://www.reddit.com/user/{username}",
+    "existsWhen": 200
   }
 ]
