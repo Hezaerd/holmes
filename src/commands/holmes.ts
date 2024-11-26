@@ -14,6 +14,7 @@ export const data: CommandData = {
       type: ApplicationCommandOptionType.String,
       name: "username",
       description: "The username to search for",
+      required: true,
     }
   ]
 }
