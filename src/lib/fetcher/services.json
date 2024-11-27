@@ -168,5 +168,35 @@
     "name": "Chess.com",
     "url": "https://www.chess.com/member/{username}",
     "existsWhen": 200
+  },
+  {
+    "name": "Pornhub",
+    "url": "https://www.pornhub.com/users/{username}",
+    "existsWhen": 200,
+    "isNSFW": true
+  },
+  {
+    "name": "XHamster",
+    "url": "https://www.xhamster.com/users/{username}",
+    "existsWhen": 200,
+    "isNSFW": true
+  },
+  {
+    "name": "RedTube",
+    "url": "https://www.redtube.com/users/{username}",
+    "existsWhen": 200,
+    "isNSFW": true
+  },
+  {
+    "name": "XVideos",
+    "url": "https://www.xvideos.com/profiles/{username}",
+    "existsWhen": 200,
+    "isNSFW": true
+  },
+  {
+    "name": "YouPorn",
+    "url": "https://www.youporn.com/uservids/{username}",
+    "existsWhen": 200,
+    "isNSFW": true
   }
 ]

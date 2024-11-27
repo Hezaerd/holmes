@@ -2,6 +2,7 @@ interface Service {
   name: string,
   url: string,
   existsWhen: number,
+  isNSFW?: boolean,
 }
 
 export async function checkUsername(service: Service, username: string): Promise<{ service: string; exist: boolean; url: string }> {
