@@ -1,12 +1,7 @@
-import type { CommandData, SlashCommandProps, CommandOptions  } from "commandkit";
-import {
-  ApplicationCommandOptionType
-} from "discord.js";
-
-import { HolmesEmbedBuilder } from "../lib/holmes-embed";
-
-import { checkUsername } from "../lib/fetcher/fetcher";
-import services from "../lib/fetcher/services.json";
+import type { CommandData, SlashCommandProps, CommandOptions } from "commandkit";
+import { ApplicationCommandOptionType, ComponentType } from "discord.js";
+import { ServiceManager } from "../lib/ServiceManager";
+import { HolmesEmbedBuilder } from "../lib/EmbedBuilder";
 
 export const data: CommandData = {
   name: "holmes",
@@ -25,14 +20,17 @@ export const data: CommandData = {
       required: false,
     }
   ]
-}
+};
 
 export const options: CommandOptions = {
   devOnly: false,
   deleted: false,
-}
+};
 
-export async function run({ interaction, client }: SlashCommandProps) {
+const serviceManager = new ServiceManager();
+const embedBuilder = new HolmesEmbedBuilder();
+
+export async function run({ interaction }: SlashCommandProps) {
   const username = interaction.options.getString("username");
   const nsfw = interaction.options.getBoolean("nsfw") ?? false;
 
@@ -40,42 +38,58 @@ export async function run({ interaction, client }: SlashCommandProps) {
     return interaction.reply("Please provide a username to search for");
   }
 
-  const sanitizedUsername = username.trim().replace(/\s+/g, '-');
-
+  const sanitizedUsername = username.trim().replace(/\s+/g, '');
   if (sanitizedUsername.length === 0) {
     return interaction.reply("Username cannot be empty or only spaces");
   }
 
   await interaction.deferReply();
 
-  const results = await Promise.all(
-    services
-      .filter(service => nsfw ? true : !service.isNSFW)
-      .map(service => checkUsername(service, sanitizedUsername))
-  );
+  try {
+    const results = await serviceManager.checkUsername(sanitizedUsername, nsfw);
+    const matchedResults = results.filter(result => result.exist);
 
-  const matchedResults = results.filter(result => result.exist);
+    let currentPage = 0;
+    const totalPages = Math.ceil(matchedResults.length / 15);
 
-  const embed = new HolmesEmbedBuilder(`🔍 Username Search Results: ${username}`)
-    .setDescription(
-      matchedResults.length > 0
-        ? 'Found the following matches:'
-        : 'No matches found.'
-    )
+    const initialEmbed = embedBuilder.createEmbed(username, matchedResults, currentPage, nsfw);
+    const buttons = embedBuilder.createButtons(currentPage, totalPages);
 
-  if (matchedResults.length > 0) {
-    embed.addFields(
-      matchedResults.map(result => ({
-        name: result.service,
-        value: `[View Profile](${result.url})`,
-        inline: true
-      }))
-    );
+    const message = await interaction.editReply({
+      embeds: [initialEmbed],
+      components: buttons
+    });
+
+    if (totalPages > 1) {
+      const collector = message.createMessageComponentCollector({
+        componentType: ComponentType.Button,
+        time: 300000
+      });
+
+      collector.on('collect', async (i) => {
+        if (i.user.id !== interaction.user.id) {
+          await i.reply({ content: 'You cannot use these buttons.', ephemeral: true });
+          return;
+        }
+
+        currentPage = i.customId === 'prev'
+          ? Math.max(0, currentPage - 1)
+          : Math.min(totalPages - 1, currentPage + 1);
+
+        const updatedEmbed = embedBuilder.createEmbed(username, matchedResults, currentPage, nsfw);
+        const updatedButtons = embedBuilder.createButtons(currentPage, totalPages);
+
+        await i.update({
+          embeds: [updatedEmbed],
+          components: updatedButtons
+        });
+      });
+
+      collector.on('end', () => {
+        message.edit({ components: [] }).catch(() => {});
+      });
+    }
+  } catch (error) {
+    await interaction.editReply('An error occurred while searching for the username.');
   }
-
-  embed.setFooter({
-    text: `Searched ${results.length} services${nsfw ? ' (including NSFW)' : ''}`
-  });
-
-  await interaction.editReply({ embeds: [embed] });
 }
