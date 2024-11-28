@@ -17,6 +17,7 @@
     "zod": "^3.23.8"
   },
   "scripts": {
-    "dev": "bun --watch src/index.ts"
+    "dev": "bun --watch src/index.ts",
+    "sort-services": "bun run src/scripts/sortServices.ts"
   }
 }

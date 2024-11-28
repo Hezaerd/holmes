@@ -1,92 +1,7 @@
 [
   {
-    "name": "GitHub",
-    "url": "https://github.com/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "Twitter",
-    "url": "https://twitter.com/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "Instagram",
-    "url": "https://instagram.com/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "LinkedIn",
-    "url": "https://www.linkedin.com/in/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "Facebook",
-    "url": "https://www.facebook.com/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "YouTube",
-    "url": "https://www.youtube.com/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "Reddit",
-    "url": "https://www.reddit.com/user/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "Pinterest",
-    "url": "https://www.pinterest.com/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "TikTok",
-    "url": "https://www.tiktok.com/@{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "Snapchat",
-    "url": "https://www.snapchat.com/add/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "Tumblr",
-    "url": "https://{username}.tumblr.com",
-    "existsWhen": 200
-  },
-  {
-    "name": "Flickr",
-    "url": "https://www.flickr.com/photos/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "Spotify",
-    "url": "https://open.spotify.com/user/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "Medium",
-    "url": "https://medium.com/@{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "SoundCloud",
-    "url": "https://soundcloud.com/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "Vimeo",
-    "url": "https://vimeo.com/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "GitLab",
-    "url": "https://gitlab.com/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "Dribbble",
-    "url": "https://dribbble.com/{username}",
+    "name": "AngelList",
+    "url": "https://angel.co/{username}",
     "existsWhen": 200
   },
   {
@@ -95,63 +10,13 @@
     "existsWhen": 200
   },
   {
-    "name": "DeviantArt",
-    "url": "https://www.deviantart.com/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "Goodreads",
-    "url": "https://www.goodreads.com/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "Twitch",
-    "url": "https://www.twitch.tv/{username}",
-    "existsWhen": 200
-  },
-  {
     "name": "Bitbucket",
     "url": "https://bitbucket.org/{username}",
     "existsWhen": 200
   },
   {
-    "name": "Stack Overflow",
-    "url": "https://stackoverflow.com/users/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "Quora",
-    "url": "https://www.quora.com/profile/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "GitHub Gist",
-    "url": "https://gist.github.com/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "AngelList",
-    "url": "https://angel.co/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "Product Hunt",
-    "url": "https://www.producthunt.com/@{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "Kaggle",
-    "url": "https://www.kaggle.com/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "Dev.to",
-    "url": "https://dev.to/{username}",
-    "existsWhen": 200
-  },
-  {
-    "name": "HackerRank",
-    "url": "https://www.hackerrank.com/{username}",
+    "name": "Chess.com",
+    "url": "https://www.chess.com/member/{username}",
     "existsWhen": 200
   },
   {
@@ -160,13 +25,78 @@
     "existsWhen": 200
   },
   {
-    "name": "Replit",
-    "url": "https://replit.com/@{username}",
+    "name": "Dev.to",
+    "url": "https://dev.to/{username}",
     "existsWhen": 200
   },
   {
-    "name": "Chess.com",
-    "url": "https://www.chess.com/member/{username}",
+    "name": "DeviantArt",
+    "url": "https://www.deviantart.com/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "Dribbble",
+    "url": "https://dribbble.com/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "Facebook",
+    "url": "https://www.facebook.com/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "Flickr",
+    "url": "https://www.flickr.com/photos/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "GitHub",
+    "url": "https://github.com/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "GitHub Gist",
+    "url": "https://gist.github.com/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "GitLab",
+    "url": "https://gitlab.com/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "Goodreads",
+    "url": "https://www.goodreads.com/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "HackerRank",
+    "url": "https://www.hackerrank.com/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "Instagram",
+    "url": "https://instagram.com/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "Kaggle",
+    "url": "https://www.kaggle.com/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "LinkedIn",
+    "url": "https://www.linkedin.com/in/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "Medium",
+    "url": "https://medium.com/@{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "Pinterest",
+    "url": "https://www.pinterest.com/{username}",
     "existsWhen": 200
   },
   {
@@ -176,14 +106,79 @@
     "isNSFW": true
   },
   {
-    "name": "XHamster",
-    "url": "https://www.xhamster.com/users/{username}",
-    "existsWhen": 200,
-    "isNSFW": true
+    "name": "Product Hunt",
+    "url": "https://www.producthunt.com/@{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "Quora",
+    "url": "https://www.quora.com/profile/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "Reddit",
+    "url": "https://www.reddit.com/user/{username}",
+    "existsWhen": 200
   },
   {
     "name": "RedTube",
     "url": "https://www.redtube.com/users/{username}",
+    "existsWhen": 200,
+    "isNSFW": true
+  },
+  {
+    "name": "Replit",
+    "url": "https://replit.com/@{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "Snapchat",
+    "url": "https://www.snapchat.com/add/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "SoundCloud",
+    "url": "https://soundcloud.com/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "Spotify",
+    "url": "https://open.spotify.com/user/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "Stack Overflow",
+    "url": "https://stackoverflow.com/users/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "TikTok",
+    "url": "https://www.tiktok.com/@{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "Tumblr",
+    "url": "https://{username}.tumblr.com",
+    "existsWhen": 200
+  },
+  {
+    "name": "Twitch",
+    "url": "https://www.twitch.tv/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "Twitter",
+    "url": "https://twitter.com/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "Vimeo",
+    "url": "https://vimeo.com/{username}",
+    "existsWhen": 200
+  },
+  {
+    "name": "XHamster",
+    "url": "https://www.xhamster.com/users/{username}",
     "existsWhen": 200,
     "isNSFW": true
   },
@@ -198,5 +193,10 @@
     "url": "https://www.youporn.com/uservids/{username}",
     "existsWhen": 200,
     "isNSFW": true
+  },
+  {
+    "name": "YouTube",
+    "url": "https://www.youtube.com/{username}",
+    "existsWhen": 200
   }
 ]
